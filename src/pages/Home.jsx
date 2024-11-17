@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { GifState } from "../context/context";
 import Gif from "../components/Gif";
+import FilterGif from "../components/FilterGif";
 
 const Home = () => {
   const { gf, gifs, setGifs, filter } = GifState();
@@ -24,6 +25,7 @@ const Home = () => {
         alt="earth banner"
         className="mt-2 rounded w-full"
       />
+      <FilterGif alignLeft={true} showTrending={true}/>
 
       <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5">
         {
