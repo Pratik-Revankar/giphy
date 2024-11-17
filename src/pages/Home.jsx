@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { GifState } from "../context/context";
+import Gif from "../components/Gif";
 
 const Home = () => {
-  console.log(import.meta.env)
+  const { gf, gifs, setGifs, filter } = GifState();
+
+  const fetchTrendingGIFs = async () => {
+    const { data } = await gf.trending({
+      limit: 20,
+      type: filter,
+      rating: "g",
+    });
+    setGifs(data);
+  };
+
+  useEffect(() => {
+    fetchTrendingGIFs();
+  }, [filter]);
   return (
-    <div >Home <p>{import.meta.env.MODE} -sdbjk</p></div>
+    <div>
+      <img
+        src="src/assets/banner.gif"
+        alt="earth banner"
+        className="mt-2 rounded w-full"
+      />
+
+      <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+        {
+          gifs.map((gif)=>{
+            return <Gif gif={gif} key={gif.title} />
+          })
+        }
+      </div>
+    </div>
   )
 };
 
-export default Home
+export default Home;
