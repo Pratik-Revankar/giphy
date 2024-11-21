@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div>
       <img
-        src="src/assets/banner.gif"
+        src="/banner.gif"
         alt="earth banner"
         className="mt-2 rounded w-full"
       />

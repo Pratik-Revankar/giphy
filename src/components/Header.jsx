@@ -23,7 +23,7 @@ const Header = () => {
     <nav>
       <div className="relative flex gap-4 justify-between items-center mb-2">
         <Link to="/" className="flex gap-2">
-          <img src="src/assets/logo.svg" alt="logo" className="w-8" />
+          <img src="/logo.svg" alt="logo" className="w-8" />
           <h1 className="text-5xl font-bold tracking-tight cursor-pointer">
             GIPHY
           </h1>
