@@ -42,7 +42,7 @@ const GifProvider = ({ children }) => {
     </GifContext.Provider>
   );
 };
-
+// {context}
 export const GifState = () => {
   return useContext(GifContext);
 };
