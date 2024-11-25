@@ -24,11 +24,19 @@ const GifProvider = ({ children }) => {
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favoriteGIFs")) || [];
     setFavorites(favorites);
-  },[]);
+  }, []);
   const gf = new GiphyFetch(import.meta.env.VITE_GIPHY_KEY);
   return (
     <GifContext.Provider
-      value={{ gf, gifs, setGifs, filter, setFilter, favorites ,addToFavorites }}
+      value={{
+        gf,
+        gifs,
+        setGifs,
+        filter,
+        setFilter,
+        favorites,
+        addToFavorites,
+      }}
     >
       {children}
     </GifContext.Provider>

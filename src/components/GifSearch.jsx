@@ -18,7 +18,7 @@ const GifSearch = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search all the GIFs and Stickers"
-        className="w-full pl-4 pr-14 py-5 text-xl text-black rounded-tl rounded-bl border broder-gray-300 outline-none"
+        className="w-full pl-4 pr-14 py-5 text-md sm:text-xl text-black rounded-tl rounded-bl border broder-gray-300 outline-none"
       />
       {query && (
         <button
