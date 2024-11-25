@@ -76,7 +76,7 @@ const Header = () => {
                     className="font-bold px-4"
                     key={category.name}
                     to={`/${category.name_encoded}`}
-                    onClick={() => showCategories(!setCategories)}
+                    // onClick={() => showCategories(!setCategories)}
                   >
                     {category.name_encoded}
                   </Link>
