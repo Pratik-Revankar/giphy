@@ -61,11 +61,12 @@ const Header = () => {
             <HiMiniBars3BottomRight
               size={30}
               className="text-sky-400 block lg:hidden"
+              onClick={() => setShowCategories(!showCategories)}
             />
           </button>
         </div>
         {showCategories && (
-          <div className="absolute right-0 top-14 px-10 pt-6 pb-9 w-full gradient z-20">
+          <div className="absolute right-0 top-11 sm:top-14 px-10 pt-6 pb-9 w-full gradient z-20">
             <span className="text-3xl font-extrabold">Categories</span>
             <hr className="bg-gray-100 opacity-50 my-5" />
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
@@ -75,6 +76,7 @@ const Header = () => {
                     className="font-bold px-4"
                     key={category.name}
                     to={`/${category.name_encoded}`}
+                    onClick={() => showCategories(!setCategories)}
                   >
                     {category.name_encoded}
                   </Link>
